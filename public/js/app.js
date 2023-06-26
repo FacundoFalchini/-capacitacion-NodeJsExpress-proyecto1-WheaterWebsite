@@ -58,3 +58,5 @@ weatherForm.addEventListener("submit", (e) => {
 //1) GIT INIT (Desde el proyect folder, web server)
 //2) GIT STATUS (Nos da el estado de cada file, en un principio todos estan como Untracked files). Node modules NO QUEREMOS trackearlo, dado que este se genera solo con npm install usando la data de los json, no es necesario mantenerlo. Lo agregamos en gitignore
 //3) GIT ADD src/ (podemos listar asi los directorios 1 por 1), y para agregar todo es GIT ADD .
+//4) GIT COMMIT -m "Initial Commit".
+//Comentarios para probar un segundo commit
