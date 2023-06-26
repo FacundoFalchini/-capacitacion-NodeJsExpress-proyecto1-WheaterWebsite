@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Weather</title>
+    <link rel="icon" href="/img/messi.png">
+    <link rel="stylesheet" href="/css/styles.css" />
+
+  </head>
+
+  <body>
+    {{!-- Meter esto en el div, lo que va a permitir es que ocupe TODO el espacio, expecto el que el footer necesita, permitiendo entonces que el footer este siempre al final, USANDO FLEX BOX--}}
+    <div class = "main-content">
+    {{!-- <h1>{{title}}</h1> --}}
+    {{>header}}
+    {{!-- <p>Create by {{name}}</p> --}}
+    <p>Use this site to get your weather</p>
+
+    {{!-- Creamos el text para que ingrese la ciudad y el boton --}}
+    <form>
+      <input placeholder="Location">
+      <button>
+        Search
+      </button>
+    </form>
+
+<p id="message-1"></p>
+<p id="message-2"></p>
+
+    </div>
+    {{>footer}}
+        <script src="/js/app.js"></script>
+    {{!-- Las otras 3 vistas no tienen este link, el codigo que va en este script es el relacionado al fecth, y esta es la unica pagina que hace esto, pr esto es la unica que lo tiene.
+    ESTO VA AL FINAL PORQUE SINO LUEGO HAY PROBLEMA CUANDO QUEREMOS HACER EL ADDEVENTLISTENER, PORQUE SINO SE CORRE EL SCRIPT ANTES DE INCLUSO CREAR EL FORM   --}}
+  </body>
+</html>
+
+{{! En lugar de hardcorear lo que dice, lo vamos a pasar como variable. Que se usa en la app.get, con el objeto que se pasa como segundo parametro }}

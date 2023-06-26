@@ -1,0 +1,72 @@
+body {
+  color: #333333;
+  font-family: Arial;
+  /* Esto limita el tamanio max que puede tener el contenido */
+  max-width: 650px;
+  /* 0 es el valor de margen abajo y arriba, y auto distribuye el lugar a la derecha e izquierda. */
+  margin: 0 auto;
+  /* Ponemos 16px entre nuestro contenido y los bordes de izquierda y derecha del buscador asi no queda pegado a algun borde cuando achicamos la ventana */
+  padding: 0 16px;
+
+  display: flex;
+  /* Column hace que vaya de top to bottom */
+  flex-direction: column;
+  /* Hacemos que el body ocupe todo el largo del viewport */
+  min-height: 100vh;
+}
+
+/* MARGIN VS PADDING
+*El padding es poner espacio dentro de la caja y el margen pone espacio fuera de la caja.
+
+Basicamente el padding aumenta el tamanio del contenedor que estemos modificando, mientras que el margin agrega espacio entre el contenedor entero y el contenedor que contiene a ese contenedor*/
+
+.main-content {
+  /* Flex-grow le dice al elemento que ocupe tanto espacio como necesite. Si es 1, dice que el main content debe ocupar todo el lugar que haya restante.
+  Basicamente lo que hicimos es en todas las paginas, en su contenido principal quitando el footer ponerlo en un contenedor DIV, al cual con flex le decimos que crezca todo lo que quede restante del lugar q deja libre footer y asi se manda footer siempre abajo del todo  */
+
+  flex-grow: 1;
+}
+
+footer {
+  color: #888888;
+  border-top: 1px solid #eeeeee;
+  margin-top: 16px;
+  /* Padding arribaabajo /izqderecha */
+  padding: 16px 0;
+}
+
+header {
+  margin-top: 16px;
+  margin-bottom: 48px;
+}
+
+h1 {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+/* Haciendo esto solo apuntamos a los links (a) que estan en el header */
+header a {
+  color: #888888;
+  margin-right: 16px;
+  /* Quitamos el subrayado */
+  text-decoration: none;
+}
+
+/* Para apuntar solamente a una imagen especifica, se usa el CLASS SELECTOR, entonces en about en su html le agregamos la clase */
+.portrait {
+  width: 250;
+}
+
+input {
+  border: 1px solid #cccccc;
+  padding: 8px;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid #888888;
+  background: #888888;
+  color: white;
+  padding: 8px;
+}

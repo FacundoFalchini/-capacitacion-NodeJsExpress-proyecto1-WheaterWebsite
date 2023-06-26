@@ -1,0 +1,19 @@
+<header>
+  {{! Es una parte de una web page, no un html entero como en las views }}
+
+  {{! <h1>Static Header.hbs Text</h1> }}
+
+  {{! Como todas las paginas tienen acceso a Title, se puede usar en el header. Y AHORA EL HEADER SE ACTUALIZA EN FUNCION DE LO QUE VALE TITLE EN LA PAG QUE ESTEMOS }}
+  <h1>{{title}}</h1>
+
+  {{! PROBLEMA: EL SV NO SE REINICIA CUANDO ALGUN .HBS TIENE ALGUN CAMBIO, PARA ESTO CONFIGURAMOS EL NODEMON PARA QUE TAMBIEN ACTUALICE EL SERVER CUANDO SE MODIFIQUE ALGUNO DE ESTOS ARCHIVOS (POR DEFAULT LOS .JS SOLAMENTE ACTIVAN EL NODEMON). -e = extensions 
+Desde la ruta en src: nodemon app.js -e js,hbs  }}
+
+  {{! DIV = DIVISION. Seccion de contenido debajo de h1 y ahi vamos a poner los 3 LINKS }}
+  <div>
+    <a href="/">Weather</a>
+    <a href="/about">About</a>
+    <a href="/help">Help</a>
+  </div>
+
+</header>

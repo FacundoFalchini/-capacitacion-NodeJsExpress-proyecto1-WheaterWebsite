@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/js/app.js"></script>
+  </head>
+
+  <body>
+    <h1>From a STATIC file</h1>
+  </body>
+</html>
+
+<!-- Hay que cargar el css en el HTML que querramos. 
+Para esto, agregamos en head el LINK (elemento vacio, osea no tiene closing tag) tiene 2 atributos: 
+                    1) Key: rel (relationship, es decir que estamos linkeando), en este caso stylesheet
+                    2) Value: href (direccion del archivo que queremos cargar). IMPORTANTE: es relativo a nuestra UBICACION ACTUAL, y su comienzo absoluto es la carpeta public. 
+                    ./ nos deja en la carpeta public xq es el directorio donde esta este html , y public tiene para acceder la carpeta css, y dentro de css nos movemos al styles.css. ESTA ES LA OPCION RELATIVA 
+                    Pero tambien podemos usar la version ABSOLUTA, estas empiezan con / (tipicamente es la raiz del disco, pero como estamos en el buscador no hay acceso al disco), y la raiz en este caso es public tambien. /css/styles.css
+
+Algo similar con el script que lo asociamos, pero este se ve en la consola del buscador. El src seria el equivalente al href, pero para js. 
+                -->
+
+<!-- Le puse indexx para que el estatico no encuentre este, y se implemente si o si el dinamico (es trabajo conjunto entre express y hbs) -->
