@@ -9,8 +9,9 @@ const hbs = require("hbs");
 
 //Express es solamente una funcion. No recibe parametros, sino que la web app se configura con los metodos.
 const app = express();
+const port = process.env.PORT || 3000;
 
-/*
+/* 
 Instalar require xq aca no esta 
 const geocode = require('./utils/geocode)
 const forecast = require('./utiles/forecast')
@@ -138,8 +139,8 @@ app.get("*", (req, res) => {
 
 //Y falta activar el server, y se le pasa algun puerto. Y tambien se le pasa una callback cuando el server esta corriendo.
 //Hay puertos default dependiendo la funcion
-app.listen(3000, () => {
-  console.log("Server is up on port 3000");
+app.listen(port, () => {
+  console.log("Server is up on port " + port);
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

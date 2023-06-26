@@ -25,20 +25,19 @@ weatherForm.addEventListener("submit", (e) => {
   messageTwo.textContent = "";
 
   //Ahora lo mismo, pero con nuestra web ---> Al obtener esta data, ahora la podemos RENDERIZAR EN PANTALLA.
-  fetch(`http://localhost:3000/weather?address=${location}`).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          messageOne.textContent = data.error;
-          //console.log(data.error);
-        } else {
-          //console.log(data);
-          messageOne.textContent = data.location;
-          messageTwo.textContent = data.forecast;
-        }
-      });
-    }
-  );
+  //Quitamos el http://localhost:3000 del URL del fetch, para que cuando estemos en el servidor funcione y tambien en el local
+  fetch(`/weather?address=${location}`).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        messageOne.textContent = data.error;
+        //console.log(data.error);
+      } else {
+        //console.log(data);
+        messageOne.textContent = data.location;
+        messageTwo.textContent = data.forecast;
+      }
+    });
+  });
 });
 
 //HEROKU CLI: Nos da acceso a los comandos Heroku
@@ -101,4 +100,17 @@ weatherForm.addEventListener("submit", (e) => {
 //TODO ESTO DE LA SSH KEYS ETC, SOLO SE HACE UNA VEZ Y SE USA PARA TODOS LOS PROXIMOS PROYECTOS.
 
 //FINALIZANDO EL PUSH:
+//git branch -M main  ---> LA RAMA PRINCIPAL ES MAIN
+//git push -u origin main ----> Pusheamos esa rama, es decir todo
 //El comando: git push -u origin main pushea todos nuestros commits
+
+/////////////////////////////////////////////////////////////////////
+//Lecture: Deploying Node.js to Heroku
+
+//Lo primero que hay que hacer es establecer nuestra SSH public key con Heroku---> Comando heroku keys:add , como tenemos una sola llave publica la encuentra automaticamente y ponemmos yes.
+
+//Una vez esto hecho, desde la ruta del proyecto CREAMOS: heroku create falchiniFacundo-weather-application ---> No sirve porque es pago...
+
+//////////////////////////////////////////////////////////////////////
+//Global modules:
+//La dev dependencis son son las q necesitan solamente en la maquina localmente mientras estamos desarrollando, no son necesarias en el ambiente de producction.  npm install nodemon --save-dev
